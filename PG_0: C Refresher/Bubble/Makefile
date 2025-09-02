@@ -12,8 +12,13 @@ run-tests-coverage: build
 	gcov prog.c
 
 # Run Valgrind to find memory leaks, requires that we build the code
+# All of these runs of valgrind ./prog are a test case, mirroring coverage tests
 run-tests-leak: build
 	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog test_normal.txt out_test_normal.txt
+	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog
+	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog nonexistent_file.txt output.txt
+	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog test_no_first_number.txt output.txt
+	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog test_huge_memory.txt output.txt
 
 # Compile the code, requires that we clean up some files first.
 # Add –lm if your code needs the math library.
