@@ -1,0 +1,7 @@
+prog
+gcov
+*.gcda
+*.gcno
+*.gcov
+out_test_normal.txt
+vgcore.*
