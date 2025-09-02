@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
   float num = 0;
   int i = 0;
-  // Print all numbers after the first one
+  
   while (fscanf(input_file_ptr, "%f", &num) == 1) {
     data[i] = num;
     i++;
