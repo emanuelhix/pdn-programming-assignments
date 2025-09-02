@@ -7,20 +7,20 @@
         -:    3:
         -:    4:// Insertion sort function
         -:    5:// https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/
-        1:    6:void insertionSort(int arr[], int n)
+        1:    6:void insertionSort(float arr[], int n)
         -:    7:{
-        4:    8:    for (int i = 1; i < n; ++i) {
-        3:    9:        int key = arr[i];
-        3:   10:        int j = i - 1;
+        5:    8:    for (int i = 1; i < n; ++i) {
+        4:    9:        float key = arr[i];
+        4:   10:        int j = i - 1;
         -:   11:
         -:   12:        /* Move elements of arr[0..i-1], that are
         -:   13:           greater than key, to one position ahead
         -:   14:           of their current position */
-        7:   15:        while (j >= 0 && arr[j] > key) {
-        4:   16:            arr[j + 1] = arr[j];
-        4:   17:            j = j - 1;
+       10:   15:        while (j >= 0 && arr[j] > key) {
+        6:   16:            arr[j + 1] = arr[j];
+        6:   17:            j = j - 1;
         -:   18:        }
-        3:   19:        arr[j + 1] = key;
+        4:   19:        arr[j + 1] = key;
         -:   20:    }
         1:   21:}
         -:   22:
@@ -60,9 +60,9 @@
         1:   56:  float num = 0;
         1:   57:  int i = 0;
         -:   58:  // Print all numbers after the first one
-        5:   59:  while (fscanf(input_file_ptr, "%f", &num) == 1) {
-        4:   60:    data[i] = num;
-        4:   61:    i++;
+        6:   59:  while (fscanf(input_file_ptr, "%f", &num) == 1) {
+        5:   60:    data[i] = num;
+        5:   61:    i++;
         -:   62:  }
         -:   63:
         -:   64:  // sort the data using insertion sort
@@ -72,12 +72,12 @@
         1:   68:  FILE *output_file_ptr = fopen(output_filename, "w");
         -:   69:
         1:   70:  fprintf(output_file_ptr, "%d\n", input_size);
-        5:   71:  for (int j = 0; j < input_size; ++j) {
+        6:   71:  for (int j = 0; j < input_size; ++j) {
         -:   72:    // Print the last number without a newline
-        4:   73:    if (j == input_size - 1)
+        5:   73:    if (j == input_size - 1)
         1:   74:      fprintf(output_file_ptr, "%#2.1f", data[j]);
         -:   75:    else
-        3:   76:      fprintf(output_file_ptr, "%#2.1f\n", data[j]);
+        4:   76:      fprintf(output_file_ptr, "%#2.1f\n", data[j]);
         -:   77:  }
         -:   78:
         -:   79:  // close the files

@@ -3,10 +3,10 @@
 
 // Insertion sort function
 // https://www.geeksforgeeks.org/dsa/insertion-sort-algorithm/
-void insertionSort(int arr[], int n)
+void insertionSort(float arr[], int n)
 {
     for (int i = 1; i < n; ++i) {
-        int key = arr[i];
+        float key = arr[i];
         int j = i - 1;
 
         /* Move elements of arr[0..i-1], that are
