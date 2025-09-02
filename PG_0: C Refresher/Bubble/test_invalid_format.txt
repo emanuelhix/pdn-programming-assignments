@@ -1,0 +1,6 @@
+# This file has invalid format - no number at the beginning
+# The test will run: ./prog test_invalid_format.txt output.txt
+# This should trigger the "No numbers found" error
+invalid
+text
+here

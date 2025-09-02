@@ -1,0 +1,2 @@
+# This file is used to test the case where no command line arguments are provided
+# The test will run: ./prog (no args) which should trigger the usage message

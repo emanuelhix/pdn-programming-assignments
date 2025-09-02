@@ -4,14 +4,16 @@
 # All of these runs of ./prog are a test case
 # We want to cover 100% of prog through these tests
 run-tests-coverage: build
+	./prog test_normal.txt out_test_normal.txt
 	./prog
-	echo "STUDENT TODO: What are all the parameter combinations that cover your code 100%?"
+	./prog nonexistent_file.txt output.txt
+	./prog test_no_first_number.txt output.txt
+	./prog test_huge_memory.txt output.txt
 	gcov prog.c
+
 # Run Valgrind to find memory leaks, requires that we build the code
 run-tests-leak: build
-	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog
-	echo "STUDENT TODO: What are all the parameter combinations that cover your code 100%?"
-	echo "              These tests should match your coverage tests."
+	valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./prog test_normal.txt out_test_normal.txt
 
 # Compile the code, requires that we clean up some files first.
 # Add –lm if your code needs the math library.
