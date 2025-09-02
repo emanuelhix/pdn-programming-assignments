@@ -8,7 +8,7 @@ run-tests-coverage: build
 	./prog
 	./prog nonexistent_file.txt output.txt
 	./prog test_no_first_number.txt output.txt
-	./prog test_huge_memory.txt output.txt
+	./prog test_huge_memory.txt output.tcd xt
 	gcov prog.c
 
 # Run Valgrind to find memory leaks, requires that we build the code
